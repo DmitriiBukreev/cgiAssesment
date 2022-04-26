@@ -8,7 +8,7 @@ CREATE TABLE EMPLOYEE (
 );
 INSERT INTO EMPLOYEE (id,name,lastname,department)
 VALUES ('1', 'Evgeniy', 'Petrosyan','personal'),
-       ('2', 'Dmitrii', 'Bukreev','verkauf'),
-       ('3', 'Arnold', 'Schwarznegger','verkauf'),
+       ('2', 'Dmitrii', 'Bukreev','entwicklung'),
+       ('3', 'Arnold', 'Miller','verkauf'),
        ('4', 'Hans', 'Zimmer','personal'),
        ('5', 'Vanessa', 'May','entwicklung');

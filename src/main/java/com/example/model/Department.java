@@ -24,7 +24,4 @@ public enum Department {
         this.number = number;
     }
 
-   /* public static Department findByKey(int i) {
-        return map.get(i);
-    }*/
 }
