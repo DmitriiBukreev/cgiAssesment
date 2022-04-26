@@ -37,9 +37,9 @@ public class EmployeeController {
         return service.findAllEmployees();
     }
 
-    @GetMapping("/{userId}")
-    public Employee getUserById(@PathVariable Long userId) {
-        return service.getById(userId);
+    @GetMapping("/{id}")
+    public Employee getUserById(@PathVariable("id") Long id) {
+        return service.getById(id);
     }
 
 

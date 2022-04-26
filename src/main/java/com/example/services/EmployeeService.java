@@ -21,6 +21,10 @@ public class EmployeeService {
     }
 
     public Long addEmployeeToDatabase(@Valid Employee employee) {
+        var userOpt = employeeRepository.findById(employee.getId());
+        if (userOpt.isPresent()) {
+           throw new IllegalArgumentException("incorrect id");
+      }
        var result= employeeRepository.save(employee);
         log.info("Added person:" + employee);
         return result.getId();
@@ -41,9 +45,11 @@ public class EmployeeService {
     }
     public void updEmployee(@Valid Employee employee) {
         employeeRepository.save(employee);
+        log.info(employee+" has been successfully updated");
     }
 
     public void delEmployee(Employee employee) {
         employeeRepository.delete(employee);
+        log.info(employee+" has been successfully deleted");
     }
 }
