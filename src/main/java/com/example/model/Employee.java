@@ -14,8 +14,8 @@ import javax.validation.constraints.Size;
 @Builder
 @Entity
 public class Employee {
+
     @Id
-    @GeneratedValue
     private Long id;
 
     @NotEmpty(message = "Name can not be empty")
@@ -27,4 +27,12 @@ public class Employee {
 
     @Enumerated(EnumType.STRING)
     private Department department;
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getId() {
+        return id;
+    }
 }

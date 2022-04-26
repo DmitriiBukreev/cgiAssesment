@@ -18,13 +18,22 @@ public class EmployeeController {
         this.service = service;
     }
 
-    @PostMapping("/")
+    @PostMapping("/add")
     public void addEmployee(@RequestBody Employee employee) {
         service.addEmployeeToDatabase(employee);
     }
 
+    @PostMapping("/del")
+    public void delEmployee(@RequestBody Employee employee) {
+        service.delEmployee(employee);
+    }
+    @PostMapping("/upd")
+    public void updateEmployee(@RequestBody Employee employee) {
+        service.updEmployee(employee);
+    }
+
     @GetMapping("/all")
-    public List<Employee> findLongestEmail() {
+    public List<Employee> findAll() {
         return service.findAllEmployees();
     }
 

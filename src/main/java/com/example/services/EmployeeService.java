@@ -5,7 +5,7 @@ import com.example.model.Employee;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.GetMapping;
+
 
 import javax.validation.Valid;
 import java.util.List;
@@ -37,7 +37,13 @@ public class EmployeeService {
 
 
     public List<Employee> findAllEmployees() {
-        var item =employeeRepository.findAll();
-        return (List<Employee>) item;
+        return (List<Employee>) employeeRepository.findAll();
+    }
+    public void updEmployee(@Valid Employee employee) {
+        employeeRepository.save(employee);
+    }
+
+    public void delEmployee(Employee employee) {
+        employeeRepository.delete(employee);
     }
 }
