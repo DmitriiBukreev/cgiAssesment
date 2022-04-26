@@ -2,7 +2,10 @@ package com.example.model;
 
 import lombok.*;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.Id;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
@@ -14,7 +17,6 @@ import javax.validation.constraints.Size;
 @Builder
 @Entity
 public class Employee {
-
 
 
     @NotEmpty(message = "Name can not be empty")

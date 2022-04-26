@@ -6,7 +6,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-
 import javax.validation.Valid;
 import java.util.List;
 
@@ -23,13 +22,13 @@ public class EmployeeService {
     public Long addEmployeeToDatabase(@Valid Employee employee) {
         var userOpt = employeeRepository.findById(employee.getId());
         if (userOpt.isPresent()) {
-           throw new IllegalArgumentException("incorrect id");
-      }
-       var result= employeeRepository.save(employee);
+            throw new IllegalArgumentException("incorrect id");
+        }
+        var result = employeeRepository.save(employee);
         log.info("Added person:" + employee);
         return result.getId();
     }
-   
+
 
     public Employee getById(Long id) {
         var item = employeeRepository.findById(id);
@@ -43,13 +42,14 @@ public class EmployeeService {
     public List<Employee> findAllEmployees() {
         return (List<Employee>) employeeRepository.findAll();
     }
+
     public void updEmployee(@Valid Employee employee) {
         employeeRepository.save(employee);
-        log.info(employee+" has been successfully updated");
+        log.info(employee + " has been successfully updated");
     }
 
     public void delEmployee(Employee employee) {
         employeeRepository.delete(employee);
-        log.info(employee+" has been successfully deleted");
+        log.info(employee + " has been successfully deleted");
     }
 }

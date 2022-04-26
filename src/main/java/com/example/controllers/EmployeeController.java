@@ -27,6 +27,7 @@ public class EmployeeController {
     public void delEmployee(@RequestBody Employee employee) {
         service.delEmployee(employee);
     }
+
     @PostMapping("/upd")
     public void updateEmployee(@RequestBody Employee employee) {
         service.updEmployee(employee);
@@ -41,7 +42,6 @@ public class EmployeeController {
     public Employee getUserById(@PathVariable("id") Long id) {
         return service.getById(id);
     }
-
 
 
 }
