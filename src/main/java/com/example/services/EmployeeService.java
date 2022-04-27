@@ -19,14 +19,13 @@ public class EmployeeService {
         this.employeeRepository = employeeRepository;
     }
 
-    public Long addEmployeeToDatabase(@Valid Employee employee) {
+    public void addEmployeeToDatabase(@Valid Employee employee) {
         var userOpt = employeeRepository.findById(employee.getId());
         if (userOpt.isPresent()) {
             throw new IllegalArgumentException("incorrect id");
         }
         var result = employeeRepository.save(employee);
         log.info("Added person:" + employee);
-        return result.getId();
     }
 
 

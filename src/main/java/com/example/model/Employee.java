@@ -2,12 +2,10 @@ package com.example.model;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
+import java.time.LocalDate;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -28,12 +26,13 @@ public class Employee {
     private String lastname;
 
     @NotEmpty(message = "Last can not be empty")
-    private String birthdate;
+    private LocalDate birthdate;
 
     @Enumerated(EnumType.STRING)
     private Department department;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
 
