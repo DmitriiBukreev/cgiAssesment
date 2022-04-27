@@ -21,13 +21,14 @@ public class Employee {
 
     @NotEmpty(message = "Name can not be empty")
     @Size(min = 2, max = 30, message = "Name should be between 2 and 30 chars")
+
     private String name;
 
     @NotEmpty(message = "Lastname can not be empty")
     private String lastname;
 
     @NotEmpty(message = "Last can not be empty")
-    private String dateOfBirth;
+    private String birthdate;
 
     @Enumerated(EnumType.STRING)
     private Department department;
@@ -35,9 +36,6 @@ public class Employee {
     @Id
     private Long id;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public Long getId() {
         return id;
