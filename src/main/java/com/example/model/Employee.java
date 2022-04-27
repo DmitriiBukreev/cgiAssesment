@@ -23,8 +23,11 @@ public class Employee {
     @Size(min = 2, max = 30, message = "Name should be between 2 and 30 chars")
     private String name;
 
-    @NotEmpty(message = "Last can not be empty")
+    @NotEmpty(message = "Lastname can not be empty")
     private String lastname;
+
+    @NotEmpty(message = "Last can not be empty")
+    private String dateOfBirth;
 
     @Enumerated(EnumType.STRING)
     private Department department;
